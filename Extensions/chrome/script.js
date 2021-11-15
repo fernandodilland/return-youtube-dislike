@@ -58,7 +58,7 @@ function setState() {
         const formattedDislike = numberFormat(response.dislikes);
         // setLikes(response.likes);
         console.log(response);
-        setDislikes(response.dislikes);
+        setDislikes(formattedDislike);
       } else {
       }
     }
@@ -94,7 +94,7 @@ function isVideoLoaded() {
 
 function numberFormat(numberState) {
   const userLocales = navigator.language;
-  const formatter = Intl.NumberFormat(userLocales, { notation: 'compact' });
+  const formatter = Intl.NumberFormat(userLocales, { notation: "compact" });
   return formatter.format(numberState);
 }
 
